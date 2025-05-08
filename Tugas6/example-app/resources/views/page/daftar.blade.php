@@ -46,7 +46,7 @@
     </form>
 
     <p>Bio:</p>
-    <form action="/">
+    <form action="/selamat">
         <textarea name="message" rows="10" cols="30"></textarea>
         <br><br>
         <input type="submit">
