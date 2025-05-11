@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('summary')->nullable();
-            $table->string('image')->nullable();
-            $table->integer('stok')->default(0);
-            $table->foreignId('genre_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('news_id');
+            $table->foreign('news_id')->references('id')->on('news');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->text('content');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('comments');
     }
 };
