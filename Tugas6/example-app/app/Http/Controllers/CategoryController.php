@@ -10,4 +10,12 @@ class CategoryController extends Controller
     {
         return view('category.tambah');
     }
+
+    public function store(Request $request)
+    {
+        $request->validata([
+            'name' => ['required', 'min:5'],
+            'description' => ['required'],
+        ]);
+    }
 }

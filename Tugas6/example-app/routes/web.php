@@ -15,3 +15,4 @@ Route::get('/selamat', [SelamatController::class, 'selamat']);
 //ROUTE CATEGORIES / GENRES
 // CREATE DATA
 Route::get('category/create', [CategoryController::class, 'create']);
+Route::post('/category', [CategoryController::class, 'store']);
